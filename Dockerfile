@@ -39,6 +39,7 @@ RUN set -eux; \
          exit 1; \
          ;; \
     esac; \
+      wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; \
 	  echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; \
 	  mkdir -p /opt/java/openjdk; \
 	  tar --extract \
@@ -53,7 +54,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
     PATH="/opt/java/openjdk/bin:$PATH"
 
 #Copy the product pack
-COPY wso2mi-4.1.0.zip ${WSO2_SERVER}.zip
+# COPY wso2mi-4.1.0.zip ${WSO2_SERVER}.zip
 
 # Verify Java installation
 RUN echo Verifying install ... \
@@ -67,7 +68,7 @@ LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
 # set Docker image build arguments
 # build arguments for user/group configurations
 ARG USER=wso2carbon
-ARG USER_ID=10001
+ARG USER_ID=802
 ARG USER_GROUP=wso2
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
