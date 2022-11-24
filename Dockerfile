@@ -122,5 +122,7 @@ EXPOSE 8253 8290
 
 USER 10001
 
+USER 802
+
 # initiate container and start WSO2 Carbon server
 ENTRYPOINT ["/tmp/wso2carbon/docker-entrypoint.sh"]
