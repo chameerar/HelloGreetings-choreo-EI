@@ -35,5 +35,7 @@ test -d ${config_volume} && [[ "$(ls -A ${config_volume})" ]] && cp -RL ${config
 
 # export WSO2_SERVER_HOME=/tmp/wso2mi/wso2mi-4.1.0
 
+cp -r ${WSO2_SERVER_HOME}/wso2/components/micro-integrator-default/configuration /tmp/osgi
+
 # start WSO2 server
 sh ${WSO2_SERVER_HOME}/bin/micro-integrator.sh "$@"
