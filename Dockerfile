@@ -71,7 +71,7 @@ ARG USER=wso2carbon
 ARG USER_ID=10001
 ARG USER_GROUP=wso2
 ARG USER_GROUP_ID=10001
-ARG USER_HOME=/tmp/${USER}
+ARG USER_HOME=/home/${USER}
 # build arguments for WSO2 product installation
 ARG WSO2_SERVER_NAME=wso2mi
 ARG WSO2_SERVER_VERSION=4.1.0
@@ -107,7 +107,7 @@ RUN \
     && chown wso2carbon:wso2 -R ${WSO2_SERVER_HOME}
 
 #Copy the artifacts in to carbon home
-COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /tmp/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
+COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
 
 # set the user and work directory
 USER ${USER_ID}
@@ -123,4 +123,4 @@ EXPOSE 8253 8290
 USER 10001
 
 # initiate container and start WSO2 Carbon server
-ENTRYPOINT ["/tmp/wso2carbon/docker-entrypoint.sh"]
+ENTRYPOINT ["/home/wso2carbon/docker-entrypoint.sh"]
