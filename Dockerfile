@@ -68,9 +68,9 @@ LABEL maintainer="WSO2 Docker Maintainers <dev@wso2.org>" \
 # set Docker image build arguments
 # build arguments for user/group configurations
 ARG USER=wso2carbon
-ARG USER_ID=802
+ARG USER_ID=10001
 ARG USER_GROUP=wso2
-ARG USER_GROUP_ID=802
+ARG USER_GROUP_ID=10001
 ARG USER_HOME=/tmp/${USER}
 # build arguments for WSO2 product installation
 ARG WSO2_SERVER_NAME=wso2mi
@@ -121,8 +121,6 @@ ENV WORKING_DIRECTORY=${USER_HOME} \
 EXPOSE 8253 8290
 
 USER 10001
-
-USER 802
 
 # initiate container and start WSO2 Carbon server
 ENTRYPOINT ["/tmp/wso2carbon/docker-entrypoint.sh"]
