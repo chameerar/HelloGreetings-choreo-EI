@@ -109,7 +109,7 @@ RUN \
 RUN mkdir /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-configs/default/api
 
 #Copy the artifacts in to carbon home
-COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-configs/default/api/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
+COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-configs/default/api/HelloWorld.xml
 
 # set the user and work directory
 USER ${USER_ID}
