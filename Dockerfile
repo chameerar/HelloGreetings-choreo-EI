@@ -112,6 +112,7 @@ RUN mkdir /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-con
 # COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-configs/default/api/HelloWorld.xml
 
 COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
+COPY EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car
 
 # set the user and work directory
 USER ${USER_ID}
