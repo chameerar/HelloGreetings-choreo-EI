@@ -35,6 +35,10 @@ test -d ${config_volume} && [[ "$(ls -A ${config_volume})" ]] && cp -RL ${config
 
 # export WSO2_SERVER_HOME=/tmp/wso2mi/wso2mi-4.1.0
 
+mkdir -p /tmp/registry/config
+mkdir -p /tmp/registry/governance
+mkdir -p /tmp/registry/local
+
 cp -r ${WSO2_SERVER_HOME}/wso2/components/micro-integrator-default/configuration /tmp/configuration
 
 # start WSO2 server
