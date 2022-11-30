@@ -74,12 +74,12 @@ ARG USER_GROUP_ID=10001
 ARG USER_HOME=/home/${USER}
 # build arguments for WSO2 product installation
 ARG WSO2_SERVER_NAME=wso2mi
-ARG WSO2_SERVER_VERSION=4.1.0
+ARG WSO2_SERVER_VERSION=4.2.0-SNAPSHOT
 ARG WSO2_SERVER_REPOSITORY=micro-integrator
 ARG WSO2_SERVER=${WSO2_SERVER_NAME}-${WSO2_SERVER_VERSION}
 ARG WSO2_SERVER_HOME=${USER_HOME}/${WSO2_SERVER}
 ARG WSO2_SERVER_DIST_URL=https://github.com/wso2/${WSO2_SERVER_REPOSITORY}/releases/download/v${WSO2_SERVER_VERSION}/${WSO2_SERVER}.zip
-ARG WSO2_MI_URL=https://github.com/arunans23/HelloGreetings/releases/download/1.0.0/wso2mi-4.1.0.zip
+ARG WSO2_MI_URL=https://github.com/arunans23/HelloGreetings/releases/download/1.1.0/wso2mi-4.2.0-SNAPSHOT.zip
 # build argument for MOTD
 ARG MOTD='printf "\n\
  Welcome to WSO2 Docker Resources \n\
@@ -106,14 +106,14 @@ RUN \
     && rm -f ${WSO2_SERVER}.zip \
     && chown wso2carbon:wso2 -R ${WSO2_SERVER_HOME}
 
-RUN mkdir /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-configs/default/api
+RUN mkdir /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/synapse-configs/default/api
 
 #Copy the artifacts in to carbon home
-# COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/synapse-configs/default/api/HelloWorld.xml
+# COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/synapse-configs/default/api/HelloWorld.xml
 
-COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
-COPY EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car
-# COPY GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.1.0/repository/deployment/server/carbonapps/GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car
+COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
+COPY EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car
+# COPY GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car
 
 # set the user and work directory
 USER ${USER_ID}
