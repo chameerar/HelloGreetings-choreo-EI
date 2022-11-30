@@ -327,7 +327,7 @@ do
     -Dproperties.file.path=default \
     -DenableReadinessProbe=true \
     -DenableManagementApi=true \
-    -DavoidConfigUpdate=true \
+    -DconfigParseOnly=true \
     -Dconfig.backup.path="/tmp/backup" \
     -Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector \
     -Dorg.ops4j.pax.logging.logReaderEnabled=false \
