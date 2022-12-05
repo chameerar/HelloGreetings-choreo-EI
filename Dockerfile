@@ -115,6 +115,8 @@ COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/ws
 COPY EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car
 # COPY GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car
 
+RUN ${WSO2_SERVER_HOME}/bin/extension-runner.sh
+
 # set the user and work directory
 USER ${USER_ID}
 WORKDIR ${USER_HOME}
