@@ -79,7 +79,7 @@ ARG WSO2_SERVER_REPOSITORY=micro-integrator
 ARG WSO2_SERVER=${WSO2_SERVER_NAME}-${WSO2_SERVER_VERSION}
 ARG WSO2_SERVER_HOME=${USER_HOME}/${WSO2_SERVER}
 ARG WSO2_SERVER_DIST_URL=https://github.com/wso2/${WSO2_SERVER_REPOSITORY}/releases/download/v${WSO2_SERVER_VERSION}/${WSO2_SERVER}.zip
-ARG WSO2_MI_URL=https://github.com/arunans23/HelloGreetings/releases/download/1.3.0/wso2mi-4.2.0-SNAPSHOT.zip
+ARG WSO2_MI_URL=https://github.com/arunans23/HelloGreetings/releases/download/1.5.0/wso2mi-4.2.0-SNAPSHOT.zip
 # build argument for MOTD
 ARG MOTD='printf "\n\
  Welcome to WSO2 Docker Resources \n\
