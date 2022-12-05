@@ -39,7 +39,7 @@ mkdir -p /tmp/registry/config
 mkdir -p /tmp/registry/governance
 mkdir -p /tmp/registry/local
 
-# cp -r ${WSO2_SERVER_HOME}/wso2/components/micro-integrator-default/configuration /tmp/configuration
+cp -r ${WSO2_SERVER_HOME}/wso2/components/micro-integrator-default/configuration /tmp/configuration
 
 # start WSO2 server
 sh ${WSO2_SERVER_HOME}/bin/micro-integrator.sh "$@"
