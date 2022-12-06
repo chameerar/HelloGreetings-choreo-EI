@@ -237,7 +237,7 @@ fi
 
 cd "$CARBON_HOME"
 
-TMP_DIR="$CARBON_HOME"/tmp
+TMP_DIR="$CARBON_HOME"/tmp/temp
 if [ -d "$TMP_DIR" ]; then
 rm -rf "$TMP_DIR"/*
 fi
@@ -285,7 +285,7 @@ do
     $JAVA_OPTS \
     -Dcom.sun.management.jmxremote \
     -classpath "$CARBON_CLASSPATH" \
-    -Djava.io.tmpdir="$CARBON_HOME/tmp" \
+    -Djava.io.tmpdir=/tmp/temp \
     -Dcatalina.base="$CARBON_HOME/wso2/lib/tomcat" \
     -Dwso2.server.standalone=true \
     -Dcarbon.registry.root=/ \
@@ -328,6 +328,7 @@ do
     -DenableReadinessProbe=true \
     -DenableManagementApi=true \
     -DreadOnlyFileSystemMode=true \
+    -DavoidConfigUpdate=true \
     -Dlogfiles.home=/tmp \
     -Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector \
     -Dorg.ops4j.pax.logging.logReaderEnabled=false \
