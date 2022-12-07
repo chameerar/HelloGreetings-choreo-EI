@@ -109,9 +109,9 @@ RUN \
 RUN mkdir /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/synapse-configs/default/api
 
 ARG CAR_URL
-ARG CAR_NAME=HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
+ARG CAR_NAME=HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT
 
-RUN wget -O ${CAR_NAME}.car "${CAR_URL}"
+RUN curl -o ${CAR_NAME}.car "${CAR_URL}"
 
 RUN cp ${CAR_NAME}.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/${CAR_NAME}.car
 
