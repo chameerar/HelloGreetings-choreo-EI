@@ -25,8 +25,6 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 RUN apk add --no-cache tzdata musl-locales musl-locales-lang \
     && rm -rf /var/cache/apk/*
 
-RUN apk add curl
-
 ENV JAVA_VERSION jdk-11.0.14+9
 # install OpenJDK 11
 RUN set -eux; \
@@ -113,7 +111,7 @@ RUN mkdir /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/sy
 ARG CAR_URL
 ARG CAR_NAME=HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT
 
-RUN curl -o ${CAR_NAME}.car "${CAR_URL}"
+RUN wget ${CAR_URL}
 
 RUN cp ${CAR_NAME}.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/
 
