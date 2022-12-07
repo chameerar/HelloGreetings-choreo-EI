@@ -111,7 +111,7 @@ RUN mkdir /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/sy
 ARG CAR_URL
 ARG CAR_NAME
 
-RUN curl wget -O ${CAR_NAME}.car "${CAR_URL}"
+RUN wget -O ${CAR_NAME}.car "${CAR_URL}"
 
 RUN cp ${CAR_NAME}.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/${CAR_NAME}.car
 
