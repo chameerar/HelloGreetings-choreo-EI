@@ -115,7 +115,7 @@ ARG CAR_NAME=HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT
 
 RUN curl -o ${CAR_NAME}.car "${CAR_URL}"
 
-RUN cp ${CAR_NAME}.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/${CAR_NAME}.car
+RUN cp ${CAR_NAME}.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/
 
 #Copy the artifacts in to carbon home
 # COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/synapse-configs/default/api/HelloWorld.xml
