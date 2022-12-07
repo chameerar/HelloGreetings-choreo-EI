@@ -108,10 +108,17 @@ RUN \
 
 RUN mkdir /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/synapse-configs/default/api
 
+ARG CAR_URL
+ARG CAR_NAME
+
+RUN curl wget -O ${CAR_NAME}.car "${CAR_URL}"
+
+RUN cp ${CAR_NAME}.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/${CAR_NAME}.car
+
 #Copy the artifacts in to carbon home
 # COPY HelloWorld.xml /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/synapse-configs/default/api/HelloWorld.xml
 
-COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
+#COPY HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/HelloWorldGreetingsCompositeExporter_1.0.0-SNAPSHOT.car
 COPY EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/EmailTestProjectCompositeExporter_1.0.0-SNAPSHOT.car
 # COPY GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car /home/wso2carbon/wso2mi-4.2.0-SNAPSHOT/repository/deployment/server/carbonapps/GoogleCalendarEventsToEmailCompositeExporter_1.0.0-SNAPSHOT.car
 
