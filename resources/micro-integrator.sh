@@ -237,7 +237,7 @@ fi
 
 cd "$CARBON_HOME"
 
-TMP_DIR="$CARBON_HOME"/tmp/temp
+TMP_DIR=/tmp/temp
 if [ -d "$TMP_DIR" ]; then
 rm -rf "$TMP_DIR"/*
 fi
@@ -330,6 +330,7 @@ do
     -DreadOnlyFileSystemMode=true \
     -DavoidConfigUpdate=true \
     -Dlogfiles.home=/tmp \
+    -Dconfig.backup.path="/tmp/backup" \
     -Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector \
     -Dorg.ops4j.pax.logging.logReaderEnabled=false \
     -Dorg.ops4j.pax.logging.eventAdminEnabled=false \
